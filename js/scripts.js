@@ -1,4 +1,15 @@
 // BUSINESS LOGIC --------------
+function Order() {
+  this.pizzaOrder = [],
+  this.currentID = 0
+}
+
+
+Order.prototype.addPizza = function(pizza) {
+  pizza.id = this.assignId();
+  this.pizzaOrder.push(pizza);
+}
+
 function Pizza(toppings, size, id) {
   this.toppings = toppings,
   this.size = size,
