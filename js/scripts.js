@@ -3,12 +3,14 @@ var smallPizzaCost = 10.50;
 var mediumPizzaCost = 14.50;
 var largePizzaCost = 19.50;
 var xlargePizzaCost = 23.50;
-
+var numberOfToppingsOffered = 6;
 
 function Order() {
   this.pizzaOrder = [],
   this.currentID = 0
 }
+
+var myOrder = new Order();
 
 Order.prototype.assignId = function(order) {
   this.currentID += 1;
@@ -58,107 +60,53 @@ console.log(toppingsTotal);
 }
 
 
-var pizza1 = new Pizza(['cheese', 'onion', 'pepperoni', 'mushroom'], 'Large');
-var pizza2 = new Pizza(['cheddar', 'bacon', 'white sauce', 'fennel'], 'Small');
-
-var myOrder = new Order();
-
-myOrder.addPizza(pizza1);
-myOrder.addPizza(pizza2);
-
-
-// Pizza.prototype.addOrder = function(pizza) {
-//   this.toppings.push(pizza);
-// }
 
 
 
 
 
-// Player.prototype.rollDice = function(group) {
-//   if (this.turnStatus === false) {
-//     console.log("Hey! It's not your turn yet.")
-//     return "";
-//   }
-//
-//   var protoDiceResult = Math.floor(Math.random()*6)+1;
-//   diceShowUI = protoDiceResult;
-//
-//   if (protoDiceResult === 1) {
-//     this.roundScore = 0;
-//     this.turnStatus = false;
-//     this.diceRollResult = 0;
-//     group.turnCheck(this);
-//     console.log("sorry, your turn is over");
-//     console.log("You rolled a " + protoDiceResult);
-//     console.log("Your round score is: " + this.roundScore);
-//     console.log("Your Total score is: " + this.totalScore);
-//     return "";
-//   } else {
-//     this.diceRollResult = protoDiceResult;
-//     this.roundScore += this.diceRollResult;
-//     console.log("You rolled a " + protoDiceResult);
-//     console.log("Your round score is: " + this.roundScore);
-//     console.log("Your Total score is: " + this.totalScore);
-//     return "";
-//   }
-// }
-//
-// Player.prototype.playerHold = function (group) {
-//   if (this.turnStatus === false) {
-//     console.log("Hey! It's not your turn yet.");
-//     return "";
-//   }
-//   this.totalScore += this.roundScore;
-//   this.roundScore = 0;
-//   this.diceRollResult = 0;
-//   this.turnStatus = false;
-//   group.turnCheck(this);
-//   if (this.totalScore >= 100) {
-//     console.log("You won the game!")
-//
-//   } else {
-//     this.turnStatus = false;
-//     return "";
-//   }
-// }
 
 
 
 // CLIENT LOGIC -----------------
 $(document).ready(function() {
 
+// Returns checked pizza toppings from form to an array
+  function collectPizzaToppings() {
+    var toppings = document.getElementsByClassName("toppings");
+    var toppingsArray = [];
+
+    for ( i = 0; i < numberOfToppingsOffered; i++) {
+      if ( toppings[i].checked === true ) {
+          // str += checks[i].value + ", ";
+          toppingsArray.push(toppings[i].value);
+      }
+     }
+     return toppingsArray;
+  }
+
+
 $("body").on("click","button", function(event) {
   event.preventDefault();
 
   var pizzaSize = $("input:radio[name=pizzaSizeChoice]:checked").val();
-
-var pizzaToppings = $("#toppingPepperoni").val();
-
-
-  var display = "<li id=" + "one" + ">" + "MyFirstPizza" + "</li>";
-  $("#yourOrder").html(display);
+  var pizzaToppings = collectPizzaToppings();
 
 
-  console.log("Your pressed the order button");
-  console.log(pizzaSize + " and " + pizzaToppings);
 
-  function collectPizzaTopptings() {
-    var checks = $("checks").val();
-    var str = '';
-
-    for ( i = 0; i < 3; i++) {
-      if ( checks[i].checked === true ) {
-          str += checks[i].value + " ";
-      }
-    }
-    console.log(str);
+  if (pizzaSize === undefined) {
+    alert("Please fill out the form!");
+    return;
   }
 
 
+  var pizza = new Pizza(pizzaToppings, pizzaSize);
+  pizza.calcPrice();
+  myOrder.addPizza(pizza);
 
+  console.log(pizzaToppings);
 
-
+  displayPizzaOrders();
 
 });
 
@@ -166,15 +114,13 @@ var pizzaToppings = $("#toppingPepperoni").val();
 function displayPizzaOrders(pizzasToDisplay) {
   var pizzaOrder = $("ul#yourOrder");
   var htmlOrderString = "";
-  pizzasToDisplay.pizzaOrder.forEach(function(pizza) {
+  myOrder.pizzaOrder.forEach(function(pizza) {
 
-    htmlOrderString += "<li id=" + "one" + ">" + "MyFirstPizza" + "</li>";
-    pizzaOrder.html(pizzasToDisplay);
+    htmlOrderString += "<p>" + pizza.cost + "<p>";
+    $("#yourOrder").html(htmlOrderString);
 
 });
 };
-
-var toppings = $("#multiple").val()
 
 
 });

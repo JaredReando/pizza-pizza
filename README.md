@@ -1,18 +1,14 @@
-# Beep Boop
+# Pizza Pizza
 
-#### _Number replacing web application._
+#### _Price a pizza._
 
 #### By _**Jared Reando**_
 
 ## Description
 
-_A web application that takes a number from a user and returns an integer list from 0 to the user inputted number with the following exceptions:_
+_A simple we page that allows you to create a custom pizza configuration and see the total price of your selected options._
 
-- Numbers that contain a 0 are replaced (all digits) with "Beep!"
-- Numbers that contain a 1 are replaced (all digits) with "Boop!"
-- Numbers divisible by 3 are replaced with "I'm sorry, Dave. I'm afraid I can't do that."
-
- _View a hosted version of this project [here](https://jaredreando.github.io/beep-boop/)_
+ _View a hosted version of this project [here](https://jaredreando.github.io/pizza-pizza/)_
 
 ### Specs
 | Behavior | Input | Output |
@@ -27,7 +23,7 @@ _A web application that takes a number from a user and returns an integer list f
 
 ## Setup/Installation Requirements
 
-* Clone this project to your local drive. Link: https://github.com/JaredReando/beep-boop/
+* Clone this project to your local drive. Link: https://github.com/JaredReando/pizza-pizza/
 * Open the index.html file in the browser of your choice to view.
 * To make changes of your own to this project, open the downloaded directory files into a developer text-editing program.
   I use _[Atom](https://atom.io/)_ (It's free!)
@@ -38,6 +34,9 @@ _Questions or feedback: jaredreando@gmail.com_
 
 ## Technologies
 
+- HTML
+- CSS
+- Bootstrap
 - JavaScript
 - jQuery
 
@@ -54,23 +53,25 @@ _Questions or feedback: jaredreando@gmail.com_
     * Description
     * Copyright and license information
 
-- [X] JavaScript business logic and user interface logic are separate.
+- [x] Allow the user to choose toppings and size for the pizza they'd like to order.
 
-- [X] Variable names are descriptive and use lower camel case (e.g. myVariableExample).
+- [x] Create a pizza object constructor with properties for toppings and size.
 
-- [X] Code is clean, well-refactored, and easy-to-read. This includes correct indentation, spacing, and including only necessary comments and debugging tools.
+- [x] Create a prototype method for the cost of a pizza depending on the selections chosen. Use your own formula for this.
 
-- [X] All previous objectives have been met.
+- [x] Code meets standards from previous weeks.
 
-- [X] Logic is broken down into "plain English" specs, listed in README.
+- [x] Constructors and prototypes are used successfully.
 
-- [X] Project is in a presentable, portfolio-quality state.
+- [x] Application works as expected.
 
-- [X] Required functionality is in place by Friday deadline.
+- [x] Plain English specs are included in your README.
 
-- [X] Project demonstrates understanding of this week's concepts. If prompted, you are able to discuss your code with an instructor using correct terminology.
+- [x] Required functionality is in place by the 5:00pm Friday deadline.
 
-- [X] Application implements a loop and works as expected.
+- [x] Project is in a polished, portfolio-quality state.
+
+- [x] Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using correct terminology.
 
 
 ### License
