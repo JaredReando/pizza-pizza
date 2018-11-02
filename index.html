@@ -10,10 +10,62 @@
 </head>
   <body>
     <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-offset-2">
+          <h1 class="jumbotron">Welcome to Prizza Prizza</h1>
+          <p>Why not order a pizza already? You scared or something?</p>
 
-      <h1 class="jumbotron">Welcome to Prizza Prizza</h1>
-      <p>Why not order a pizza already? You scared or something?</p>
-      <button type="button" name="button">Add Pizza</button>
+          <div class="well">
+            <form>
+              <label class="radio-inline">
+              <input type="radio" name="pizzaSizeChoice" id="sizeSmall" value="small"> Small <br> ($10.50)
+              </label>
+              <label class="radio-inline">
+              <input type="radio" name="pizzaSizeChoice" id="sizeMedium" value="medium"> Medium <br> ($14.50)
+              </label>
+              <label class="radio-inline">
+              <input type="radio" name="pizzaSizeChoice" id="sizeLarge" value="large"> Large <br> $19.50
+              </label>
+              <label class="radio-inline">
+              <input type="radio" name="pizzaSizeChoice" id="sizeXlarge" value="extraLarge"> Extra Large <br> $23.50
+              </label>
+            </form>
+
+          </div>
+
+          <div class="well">
+            <form>
+              <h3>Choose toppings ($0.50 each)</h5>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="toppingPepperoni" value="pepperoni">Pepperoni</label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="toppingCheese" value="cheese">Cheese</label>
+              <label class="checkbox-inline">
+                <input type="checkbox" id="toppingMushrooms" value="mushrooms">Mushrooms</label>
+            </form>
+
+          </div>
+
+
+          <button type="button" name="button">Add Pizza</button>
+
+        </div>
+        <div class="col-md-8 col-offset-4">
+          <ul id="yourOrder">
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
     </div>
   </body>
 </html>

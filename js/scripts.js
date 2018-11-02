@@ -4,11 +4,17 @@ function Order() {
   this.currentID = 0
 }
 
+Order.prototype.assignId = function(order) {
+  this.currentID += 1;
+  return this.currentID;
+}
 
 Order.prototype.addPizza = function(pizza) {
   pizza.id = this.assignId();
   this.pizzaOrder.push(pizza);
 }
+
+
 
 function Pizza(toppings, size, id) {
   this.toppings = toppings,
@@ -16,11 +22,16 @@ function Pizza(toppings, size, id) {
   this.id = id
 }
 
-'pepperoni', 'cheese', 'onions', 'olives', ''
 
-Pizza.prototype.addOrder = function(pizza) {
-  this.toppings.push(pizza);
-}
+var pizza1 = new Pizza(['cheese', 'onion', 'pepperoni', 'mushroom'], 'Large');
+var pizza2 = new Pizza(['cheddar', 'bacon', 'white sauce', 'fennel'], 'Small');
+
+var myOrder = new Order();
+
+
+// Pizza.prototype.addOrder = function(pizza) {
+//   this.toppings.push(pizza);
+// }
 
 
 
@@ -78,10 +89,24 @@ Pizza.prototype.addOrder = function(pizza) {
 
 // CLIENT LOGIC -----------------
 $(document).ready(function() {
-$("body").on("click","button", function() {
+
+$("body").on("click","button", function(event) {
+  event.preventDefault();
+
+  $("#yourOrder").html("<li>" + 'this' + "</li>");
   console.log("Your pressed the order button");
+
 });
 
+
+function displayPizzaOrders(pizzasToDisplay) {
+  var pizzaOrder = $("ul#yourOrder");
+  var htmlOrderString = "";
+  pizzasToDisplay.pizzaOrder.forEach(function(pizza) {
+    htmlOrderString += "<li id=" + "one" + ">" + "MyFirstPizza" + "</li>";
+  pizzaOrder.html(pizzasToDisplay);
+});
+};
 
 
 
