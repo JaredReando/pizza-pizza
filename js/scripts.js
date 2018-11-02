@@ -1,4 +1,10 @@
 // BUSINESS LOGIC --------------
+var smallPizzaCost = 10.50;
+var mediumPizzaCost = 14.50;
+var largePizzaCost = 19.50;
+var xlargePizzaCost = 23.50;
+
+
 function Order() {
   this.pizzaOrder = [],
   this.currentID = 0
@@ -20,6 +26,35 @@ function Pizza(toppings, size, id) {
   this.toppings = toppings,
   this.size = size,
   this.id = id
+}
+
+Pizza.prototype.calcPrice = function (pizza) {
+  var toppingsTotal = 0;
+  this.cost = 0;
+
+  switch (this.size) {
+    case "Small":
+      this.cost += smallPizzaCost
+      break;
+    case "Medium":
+      this.cost += mediumPizzaCost
+      break;
+    case "Large":
+      this.cost += largePizzaCost
+      break;
+    case "Extra Large":
+      this.cost += xlargePizzaCost
+      break;
+    default:
+
+  }
+
+  for(var i = 0; i < this.toppings.length; i++) {
+    toppingsTotal += 1;
+  }
+console.log(toppingsTotal);
+  this.cost += (toppingsTotal * .50);
+  this.cost = "$" + this.cost.toFixed(2);
 }
 
 
@@ -96,12 +131,12 @@ $(document).ready(function() {
 $("body").on("click","button", function(event) {
   event.preventDefault();
 
-var display = $("#multiple").val();
 
 
   $("#yourOrder").html("<li>" + 'this' + "</li>");
   console.log("Your pressed the order button");
 
+var display = $("input").val(["check1", "check2", "radio1"]);
 
 
 console.log(display);
