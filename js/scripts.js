@@ -28,6 +28,9 @@ var pizza2 = new Pizza(['cheddar', 'bacon', 'white sauce', 'fennel'], 'Small');
 
 var myOrder = new Order();
 
+myOrder.addPizza(pizza1);
+myOrder.addPizza(pizza2);
+
 
 // Pizza.prototype.addOrder = function(pizza) {
 //   this.toppings.push(pizza);
@@ -95,6 +98,8 @@ $("body").on("click","button", function(event) {
 
   $("#yourOrder").html("<li>" + 'this' + "</li>");
   console.log("Your pressed the order button");
+
+displayPizzaOrders(myOrder);  
 
 });
 
