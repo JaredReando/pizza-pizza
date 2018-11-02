@@ -77,3 +77,13 @@ Pizza.prototype.addOrder = function(pizza) {
 
 
 // CLIENT LOGIC -----------------
+$(document).ready(function() {
+$("body").on("click","button", function() {
+  console.log("Your pressed the order button");
+});
+
+
+
+
+
+});
