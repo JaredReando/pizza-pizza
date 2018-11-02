@@ -96,10 +96,15 @@ $(document).ready(function() {
 $("body").on("click","button", function(event) {
   event.preventDefault();
 
+var display = $("#multiple").val();
+
+
   $("#yourOrder").html("<li>" + 'this' + "</li>");
   console.log("Your pressed the order button");
 
-displayPizzaOrders(myOrder);  
+
+
+console.log(display);
 
 });
 
