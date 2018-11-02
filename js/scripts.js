@@ -131,15 +131,34 @@ $(document).ready(function() {
 $("body").on("click","button", function(event) {
   event.preventDefault();
 
+  var pizzaSize = $("input:radio[name=pizzaSizeChoice]:checked").val();
+
+var pizzaToppings = $("#toppingPepperoni").val();
 
 
-  $("#yourOrder").html("<li>" + 'this' + "</li>");
+  var display = "<li id=" + "one" + ">" + "MyFirstPizza" + "</li>";
+  $("#yourOrder").html(display);
+
+
   console.log("Your pressed the order button");
+  console.log(pizzaSize + " and " + pizzaToppings);
 
-var display = $("input").val(["check1", "check2", "radio1"]);
+  function collectPizzaTopptings() {
+    var checks = $("checks").val();
+    var str = '';
+
+    for ( i = 0; i < 3; i++) {
+      if ( checks[i].checked === true ) {
+          str += checks[i].value + " ";
+      }
+    }
+    console.log(str);
+  }
 
 
-console.log(display);
+
+
+
 
 });
 
@@ -148,12 +167,14 @@ function displayPizzaOrders(pizzasToDisplay) {
   var pizzaOrder = $("ul#yourOrder");
   var htmlOrderString = "";
   pizzasToDisplay.pizzaOrder.forEach(function(pizza) {
+
     htmlOrderString += "<li id=" + "one" + ">" + "MyFirstPizza" + "</li>";
-  pizzaOrder.html(pizzasToDisplay);
+    pizzaOrder.html(pizzasToDisplay);
+
 });
 };
 
-
+var toppings = $("#multiple").val()
 
 
 });

@@ -15,22 +15,22 @@
           <h1 class="jumbotron">Welcome to Prizza Prizza</h1>
           <p>Why not order a pizza already? You scared or something?</p>
 
-          <div class="pizza-selection">
+          <div class="pizza-builder">
 
             <div class="well">
               <form>
                 <h2>Choose size</h2>
-                <label class="radio-inline">
-                <input type="radio" name="pizzaSizeChoice" id="sizeSmall" value="small"> Small <br> ($10.50)
+                <label class="radio-inline" id="pizzaSize">
+                <input type="radio" name="pizzaSizeChoice" id="sizeSmall" value="Small">Small <br> ($10.50)
                 </label>
                 <label class="radio-inline">
-                <input type="radio" name="pizzaSizeChoice" id="sizeMedium" value="medium"> Medium <br> ($14.50)
+                <input type="radio" name="pizzaSizeChoice" id="sizeMedium" value="Medium"> Medium <br> ($14.50)
                 </label>
                 <label class="radio-inline">
-                <input type="radio" name="pizzaSizeChoice" id="sizeLarge" value="large"> Large <br> $19.50
+                <input type="radio" name="pizzaSizeChoice" id="sizeLarge" value="Large"> Large <br> $19.50
                 </label>
                 <label class="radio-inline">
-                <input type="radio" name="pizzaSizeChoice" id="sizeXlarge" value="extraLarge"> Extra Large <br> $23.50
+                <input type="radio" name="pizzaSizeChoice" id="sizeXlarge" value="Extra Large"> Extra Large <br> $23.50
                 </label>
               </form>
 
@@ -40,16 +40,16 @@
               <form id="multiple">
                 <h2>Choose toppings ($0.50 each)</h2>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="toppingPepperoni" value="pepperoni">Pepperoni
+                  <input type="checkbox" class="checks" value="pepperoni">Pepperoni
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="toppingCheese" value="cheese">Cheese
+                  <input type="checkbox" class="checks" value="cheese">Cheese
                 </label>
                 <label class="checkbox-inline">
-                  <input type="checkbox" id="toppingMushrooms" value="mushrooms">Mushrooms
+                  <input type="checkbox" class="checks" value="mushrooms">Mushrooms
                 </label>
 
-                <label class="checkbox-inline">
+                <!-- <label class="checkbox-inline">
                   <input type="checkbox" id="toppingOlives" value="olives">Olives
                 </label>
                 <label class="checkbox-inline">
@@ -57,12 +57,8 @@
                 </label>
                 <label class="checkbox-inline">
                   <input type="checkbox" id="toppingTomatoes" value="tomatoes">Tomatoes
-                </label>
+                </label> -->
 
-                <input type="checkbox" name="checkboxname" value="check1"> check1
-                <input type="checkbox" name="checkboxname" value="check2"> check2
-                <input type="radio" name="r" value="radio1"> radio1
-                <input type="radio" name="r" value="radio2"> radio2
 
 
               </form>
