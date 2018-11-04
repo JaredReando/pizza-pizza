@@ -12,11 +12,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-10 col-offset-2">
-          <h1 class="jumbotron">Welcome to Prizza Prizza</h1>
-          <p>Why not order a pizza already? You scared or something?</p>
-
+          <h1 class="jumbotron"><img src="img/pizza.png" alt="pizza">Welcome to Prizza Prizza<img src="img/pizza2.png" alt="pizza"></h1>
+          <h3>Why not order a pizza already? What are you, scared or something?</h3>
           <div class="pizza-builder">
-
             <div class="well">
               <form>
                 <h2>Choose size</h2>
@@ -33,9 +31,7 @@
                 <input type="radio" name="pizzaSizeChoice" id="sizeXlarge" value="Extra Large"> Extra Large <br> $23.50
                 </label>
               </form>
-
             </div>
-
             <div class="well">
               <form id="multiple">
                 <h2>Choose toppings ($0.50 each)</h2>
@@ -58,37 +54,23 @@
                 <label class="checkbox-inline">
                   <input type="checkbox" class="toppings" value="Tomatoes">Tomatoes
                 </label>
-
-
-
               </form>
-
             </div>
           </div>
-
-
-          <button type="button" name="button">Add Pizza</button>
-
+          <div>
+            <button type="button" name="button">Add Pizza</button>
+          </div>
         </div>
         <div class="col-md-10 col-offset-2">
+          <div class="well">
           <h2>Your Pizzas:</h2>
-          <div>
-            <ul id="yourOrder">
-
-            </ul>
+            <div >
+              <ul id="yourOrderItems"></ul>
+              <p id="yourOrderTotal"></p>
+            </div>
           </div>
-
         </div>
-
       </div>
-
-
-
-
-
-
-
-
     </div>
   </body>
 </html>

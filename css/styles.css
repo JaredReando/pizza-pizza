@@ -5,3 +5,12 @@ body {
 .pizza-builder  {
   font-size: 1.3em;
 }
+
+button {
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
+
+img {
+  width: 180px;
+}
