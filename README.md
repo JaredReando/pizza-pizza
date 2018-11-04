@@ -11,9 +11,18 @@ _A simple we page that allows you to create a custom pizza configuration and see
  _View a hosted version of this project [here](https://jaredreando.github.io/pizza-pizza/)_
 
 ### Specs
-
-
-
+- Shows pizza size selection.
+    - Input: "Large"
+    - Output: "Size: Large"
+- Calculates sum of added toppings ($.50/each).
+    - Input: "Cheese, Pepperoni, Mushrooms"
+    - Output: "$1.50"
+- Shows total pizza cost based on selections.
+    - Input: "Large", "Cheese, Pepperoni"
+    - Output: "$25.00"
+- Shows total of all pizzas added.
+    - Input: Pizza1($12.00) + Pizza2($20.00) + Pizza3($19.50)
+    - Output: "Order total: $51.50"
 
 ## Setup/Installation Requirements
 

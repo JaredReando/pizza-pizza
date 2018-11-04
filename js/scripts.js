@@ -3,7 +3,7 @@ var smallPizzaCost = 10.50;
 var mediumPizzaCost = 14.50;
 var largePizzaCost = 19.50;
 var xlargePizzaCost = 23.50;
-var numberOfToppingsOffered = 6;
+var numberOfToppingsOffered = 12;
 
 var myOrder = new Order();
 
@@ -76,7 +76,7 @@ $(document).ready(function() {
     var functionPizzaTotal = 0;
     for(var i = 0; i < myOrder.pizzaOrder.length; i++) {
       var toppingsString = myOrder.pizzaOrder[i].toppings.join(", ");
-      functionPizzaTotal += parseInt(myOrder.pizzaOrder[i].cost);
+      functionPizzaTotal += parseFloat(myOrder.pizzaOrder[i].cost);
       htmlOrderString += "<h5>Pizza " + (myOrder.pizzaOrder[i].id) + "</h3><li><b>Size:</b> " + myOrder.pizzaOrder[0].size + "</li><li><b>Toppings:</b> " + toppingsString + "</li><li><b>Cost: </b>$" + myOrder.pizzaOrder[i].cost + "</li>";
       $("#yourOrderItems").html(htmlOrderString);
     };
