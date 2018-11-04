@@ -114,12 +114,23 @@ $("body").on("click","button", function(event) {
 function displayPizzaOrders(pizzasToDisplay) {
   var pizzaOrder = $("ul#yourOrder");
   var htmlOrderString = "";
-  myOrder.pizzaOrder.forEach(function(pizza) {
 
-    htmlOrderString += "<p>" + pizza.cost + "<p>";
+  for(var i = 0; i < myOrder.pizzaOrder.length; i++) {
+  // myOrder.pizzaOrder.forEach(function(pizza) {
+    var toppingsString = myOrder.pizzaOrder[i].toppings.join(", ");
+
+    htmlOrderString += "<h5>Pizza " + (myOrder.pizzaOrder[i].id) + "</h5><li>Size: " + myOrder.pizzaOrder[0].size + "</li><li>Toppings: " + toppingsString + "</li><li>Price: " + myOrder.pizzaOrder[i].price + "</li>"
+
+
+
+    ;
+
+
+
+    // pizza.cost + "<p>";
     $("#yourOrder").html(htmlOrderString);
 
-});
+};
 };
 
 
